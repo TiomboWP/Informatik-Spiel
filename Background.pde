@@ -9,20 +9,27 @@ class Background {
   }
 
   public void showBackground() {
+
+    if (screenPosition < 0) {
+      screenPosition += width;
+    } else if (screenPosition > width) {
+      screenPosition -= width;
+    }
+
     int xOff = screenPosition;
+
     image(background, -xOff+width, 0);
     image(background, -xOff-width, 0);
     image(background, -xOff, 0);
   }
 
   public void loadBackground() {
-    
+
     if (loadImage("data/background.png") != null) {//Lade den Hintergrund bei existieren
 
       background.beginDraw();
       background.image(loadImage("data/background.png"), 0, 0);
       background.endDraw();
-      
     } else {//Erstelle den Hintergrund
 
       background.beginDraw();
@@ -43,13 +50,12 @@ class Background {
         background.vertex(x, height-200-yHeight);
 
         yHeight = (int)random(yHeight-20, yHeight+20);
-      
       }
       background.vertex(width, height-220);
       background.vertex(width, height);
       background.endShape(CLOSE);
       /*Hills*/
-      
+
       /*Ground*/
       background.strokeWeight(1);
       background.stroke(10);

@@ -30,12 +30,6 @@ void keyPressed(){
 
 void draw(){
   
-  if(screenPosition < 0){
-    screenPosition += width;
-  }else if(screenPosition > width){
-    screenPosition -= width; 
-  }
-  
   bg.showBackground();//Hintegrund Zeigen
   
   

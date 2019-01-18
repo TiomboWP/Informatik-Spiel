@@ -1,9 +1,13 @@
 class Player{
  
   PVector pos;
-  color playerColor;
+  PGraphics currentTexture;
+  PGraphics[] walkingRight;
+  PGraphics[] walkingLeft;
   
-  public Player(){
+  public Player(PVector pos){
+    
+    this.pos = pos;
     
   }
   
@@ -13,8 +17,6 @@ class Player{
   public void show(){
     
     stroke(150);
-    fill(playerColor);
-    
     rect(pos.x-PlayerData.SIZE/2, pos.y, PlayerData.SIZE, PlayerData.SIZE);
     
   }
