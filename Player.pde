@@ -1,6 +1,7 @@
 class Player{
  
   PVector pos;
+  PVector vel;
   PGraphics currentTexture;
   PGraphics[] walkingRight;
   PGraphics[] walkingLeft;
@@ -8,11 +9,19 @@ class Player{
   public Player(PVector pos){
     
     this.pos = pos;
+    this.vel = new PVector(0, 0);
     
   }
   
-  
-  
+  public void update(){//Postition des Spielers updaten
+    
+    this.vel.add(0, PlayerData.GRAVITY);
+    this.vel.limit(PlayerData.MAXSPEED);
+    
+    
+    
+    
+  }
   
   public void show(){
     

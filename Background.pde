@@ -16,7 +16,7 @@ class Background {
       screenPosition -= width;
     }
 
-    int xOff = screenPosition;
+    float xOff = screenPosition;
 
     image(background, -xOff+width, 0);
     image(background, -xOff-width, 0);
@@ -41,7 +41,7 @@ class Background {
       /*Hills*/
       int yHeight = 20;
       background.noStroke();
-      background.fill(13, 224, 38);
+      background.fill(10, 200, 30);
       background.beginShape();
       background.vertex(0, height);
       background.vertex(0, height-220);

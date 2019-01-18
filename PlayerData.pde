@@ -1,10 +1,7 @@
 static class PlayerData{
  
-  public static int MAXSPEED = 4;
+  public static float MAXSPEED = 2;
   public static int SIZE = 20;
-  
-  void setupData(){
-    
-  }
+  public static float GRAVITY = 0.2;
   
 }
